@@ -1,0 +1,16 @@
+ version: '3.3'
+
+ services:
+   postgres_teatro:
+     image: postgres
+     environment:
+       - POSTGRES_DB=teatro-db
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=postgres
+     ports:
+       - '5130:5432'
+     volumes:
+       - postgres_data:/var/lib/postgresql
+ volumes:
+   postgres_data:
+     external: true
